@@ -1,0 +1,5 @@
+name: HoloBroadcast
+author: _Rolyn
+description: Display Holograms in front of players!
+main: net.mystipvp.holobroadcast.bungeecord.HolobroadcastBungee
+version: "3.0"

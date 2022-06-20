@@ -1,0 +1,10 @@
+cool-template-name:
+  1:
+    permission: "some.permission.goes.here"
+    message: "If the receiving player has some.permission.goes.here permission he will receive this message"
+  2:
+    permission: "some.lower.permission"
+    message: "Otherwise he will receive this one"
+  3:
+    permission: "etc.permission"
+    message: "Etc etc etc.... (4, 5, 6, ...)"

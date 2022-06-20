@@ -1,0 +1,151 @@
+#            _____                  _______                  _____    _______                  _____                   _____                  _______                  _____                    _____                   _____                    _____                    _____            _____
+#           /\    \                /::\    \                /\    \  /::\    \                /\    \                 /\    \                /::\    \                /\    \                  /\    \                 /\    \                  /\    \                  /\    \          /\    \
+#          /::\____\              /::::\    \              /::\____\/::::\    \              /::\    \               /::\    \              /::::\    \              /::\    \                /::\    \               /::\    \                /::\    \                /::\    \        /::\    \
+#         /:::/    /             /::::::\    \            /:::/    /::::::\    \            /::::\    \             /::::\    \            /::::::\    \            /::::\    \              /::::\    \             /::::\    \              /::::\    \              /::::\    \       \:::\    \
+#        /:::/    /             /::::::::\    \          /:::/    /::::::::\    \          /::::::\    \           /::::::\    \          /::::::::\    \          /::::::\    \            /::::::\    \           /::::::\    \            /::::::\    \            /::::::\    \       \:::\    \
+#       /:::/    /             /:::/~~\:::\    \        /:::/    /:::/~~\:::\    \        /:::/\:::\    \         /:::/\:::\    \        /:::/~~\:::\    \        /:::/\:::\    \          /:::/\:::\    \         /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \       \:::\    \
+#      /:::/____/             /:::/    \:::\    \      /:::/    /:::/    \:::\    \      /:::/__\:::\    \       /:::/__\:::\    \      /:::/    \:::\    \      /:::/__\:::\    \        /:::/  \:::\    \       /:::/  \:::\    \        /:::/__\:::\    \        /:::/__\:::\    \       \:::\    \
+#     /::::\    \            /:::/    / \:::\    \    /:::/    /:::/    / \:::\    \    /::::\   \:::\    \     /::::\   \:::\    \    /:::/    / \:::\    \    /::::\   \:::\    \      /:::/    \:::\    \     /:::/    \:::\    \      /::::\   \:::\    \       \:::\   \:::\    \      /::::\    \
+#    /::::::\    \   _____  /:::/____/   \:::\____\  /:::/    /:::/____/   \:::\____\  /::::::\   \:::\    \   /::::::\   \:::\    \  /:::/____/   \:::\____\  /::::::\   \:::\    \    /:::/    / \:::\    \   /:::/    / \:::\    \    /::::::\   \:::\    \    ___\:::\   \:::\    \    /::::::\    \
+#   /:::/\:::\    \ /\    \|:::|    |     |:::|    |/:::/    /:::|    |     |:::|    |/:::/\:::\   \:::\ ___\ /:::/\:::\   \:::\____\|:::|    |     |:::|    |/:::/\:::\   \:::\    \  /:::/    /   \:::\ ___\ /:::/    /   \:::\    \  /:::/\:::\   \:::\    \  /\   \:::\   \:::\    \  /:::/\:::\    \
+#  /:::/  \:::\    /::\____\:::|____|     |:::|    /:::/____/|:::|____|     |:::|    /:::/__\:::\   \:::|    /:::/  \:::\   \:::|    |:::|____|     |:::|    /:::/  \:::\   \:::\____\/:::/____/     \:::|    /:::/____/     \:::\____\/:::/  \:::\   \:::\____\/::\   \:::\   \:::\____\/:::/  \:::\____\
+#  \::/    \:::\  /:::/    /\:::\    \   /:::/    /\:::\    \ \:::\    \   /:::/    /\:::\   \:::\  /:::|____\::/   |::::\  /:::|____|\:::\    \   /:::/    /\::/    \:::\  /:::/    /\:::\    \     /:::|____\:::\    \      \::/    /\::/    \:::\  /:::/    /\:::\   \:::\   \::/    /:::/    \::/    /
+#   \/____/ \:::\/:::/    /  \:::\    \ /:::/    /  \:::\    \ \:::\    \ /:::/    /  \:::\   \:::\/:::/    / \/____|:::::\/:::/    /  \:::\    \ /:::/    /  \/____/ \:::\/:::/    /  \:::\    \   /:::/    / \:::\    \      \/____/  \/____/ \:::\/:::/    /  \:::\   \:::\   \/____/:::/    / \/____/
+#            \::::::/    /    \:::\    /:::/    /    \:::\    \ \:::\    /:::/    /    \:::\   \::::::/    /        |:::::::::/    /    \:::\    /:::/    /            \::::::/    /    \:::\    \ /:::/    /   \:::\    \                       \::::::/    /    \:::\   \:::\    \  /:::/    /
+#             \::::/    /      \:::\__/:::/    /      \:::\    \ \:::\__/:::/    /      \:::\   \::::/    /         |::|\::::/    /      \:::\__/:::/    /              \::::/    /      \:::\    /:::/    /     \:::\    \                       \::::/    /      \:::\   \:::\____\/:::/    /
+#             /:::/    /        \::::::::/    /        \:::\    \ \::::::::/    /        \:::\  /:::/    /          |::| \::/____/        \::::::::/    /               /:::/    /        \:::\  /:::/    /       \:::\    \                      /:::/    /        \:::\  /:::/    /\::/    /
+#            /:::/    /          \::::::/    /          \:::\    \ \::::::/    /          \:::\/:::/    /           |::|  ~|               \::::::/    /               /:::/    /          \:::\/:::/    /         \:::\    \                    /:::/    /          \:::\/:::/    /  \/____/
+#           /:::/    /            \::::/    /            \:::\    \ \::::/    /            \::::::/    /            |::|   |                \::::/    /               /:::/    /            \::::::/    /           \:::\    \                  /:::/    /            \::::::/    /
+#          /:::/    /              \::/____/              \:::\____\ \::/____/              \::::/    /             \::|   |                 \::/____/               /:::/    /              \::::/    /             \:::\____\                /:::/    /              \::::/    /
+#          \::/    /                ~~                     \::/    /  ~~                     \::/____/               \:|   |                  ~~                     \::/    /                \::/____/               \::/    /                \::/    /                \::/    /
+#           \/____/                                         \/____/                           ~~                      \|___|                                          \/____/                  ~~                      \/____/                  \/____/                  \/____/
+#
+# In this file you can change various messages displayed in HoloBroadcast. For a more detailed documentation
+# on how to configure HoloBroadcast please visit HoloBroadcast's Spigot page.
+
+chat-broadcast-separator: '&b&m          &7[&9Holo&bBroadcast&7]&b&m          '
+chat-message-combattaged: '&cYou received this hologram as chat message because you are in combat!'
+
+player-settings-gui:
+  gui-name: '&c&lHUD Settings'
+  clicksound:
+    enabled: true
+    sound: 'UI_BUTTON_CLICK'
+  decoration:
+    item1: 'BLUE_STAINED_GLASS_PANE'
+    item2: 'PURPLE_STAINED_GLASS_PANE'
+  hud:
+    activated: true
+    slot: 2
+    row: 1
+    enabled:
+      item: 'GLOWSTONE_DUST'
+      title: '&aReceive HUD'
+      lore:
+        - '&7&o(Right-Click to disable)'
+        - ''
+        - '&2Enabled'
+    disabled:
+      item: 'COBWEB'
+      title: '&cReceive HUD'
+      lore:
+        - '&7&o(Right-Click to enable)'
+        - ''
+        - '&4Disabled'
+        - ''
+        - '&e&oHolograms received in the chat'
+        - '&e&owill not look the same'
+        - '&e&oas holograms received as HUD.'
+  hud-distance:
+    activated: true
+    slot: 3
+    row: 1
+    distance-min: 2
+    distance-max: 4
+    default: 3
+    items:
+      distance-2: 'STONE_BRICK_SLAB'
+      distance-3: 'STONE_BRICK_STAIRS'
+      distance-4: 'STONE_BRICKS'
+    title: '&3HUD view distance'
+    lore:
+      - '&7&o(Right-Click to change to %distance_next%)'
+      - ''
+      - '&3Distance: &b%distance% blocks'
+  announcer:
+    activated: true
+    slot: 4
+    row: 1
+    enabled:
+      item: 'COMMAND_BLOCK'
+      title: '&aReceive auto-announcer'
+      lore:
+        - '&7&o(Right-Click to disable)'
+        - ''
+        - '&2You will receive auto-announcer messages'
+    disabled:
+      item: 'COMMAND_BLOCK_MINECART'
+      title: '&cReceive auto-announcer'
+      lore:
+        - '&7&o(Right-Click to enable)'
+        - ''
+        - '&4You will not receive auto-'
+        - '&4announcer messages.'
+        - '&cYou may miss important information!'
+  sounds:
+    activated: true
+    slot: 5
+    row: 1
+    enabled:
+      item: 'MUSIC_DISC_CAT'
+      title: '&aReceive HUD sounds'
+      lore:
+        - '&7&o(Right-Click to disable)'
+        - ''
+        - '&aYou will hear the sounds'
+        - '&aplayed by some HUD.'
+    disabled:
+      item: 'MUSIC_DISC_11'
+      title: '&cReceive HUD sounds'
+      lore:
+        - '&7&o(Right-Click to enable)'
+        - ''
+        - '&cYou will not hear any'
+        - '&csounds from HUD.'
+  combat:
+    activated: true
+    slot: 6
+    row: 1
+    enabled:
+      item: 'GOLDEN_SWORD'
+      title: '&aReceive HUD in combat'
+      lore:
+        - '&7&o(Right-Click to disable)'
+        - ''
+        - '&aYou may receive messages while fighting.'
+    disabled:
+      item: 'STONE_SWORD'
+      title: '&cReceive HUD in combat'
+      lore:
+        - '&7&o(Right-Click to enable)'
+        - ''
+        - '&cYou will not receive messages'
+        - '&cwhile fighting.'
+  particles:
+    activated: true
+    slot: 4
+    row: 2
+    enabled:
+      item: 'FIREWORK_ROCKET'
+      title: '&aReceive particles'
+      lore:
+        - '&7&o(Right-Click to disable)'
+        - ''
+        - '&aYou may receive particles in HUD.'
+    disabled:
+      item: 'FIREWORK_STAR'
+      title: '&cReceive particles'
+      lore:
+        - '&7&o(Right-Click to enable)'
+        - ''
+        - '&cYou will not receive particles in HUD.'

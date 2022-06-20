@@ -1,0 +1,102 @@
+#            _____                  _______                  _____    _______                  _____                   _____                  _______                  _____                    _____                   _____                    _____                    _____            _____
+#           /\    \                /::\    \                /\    \  /::\    \                /\    \                 /\    \                /::\    \                /\    \                  /\    \                 /\    \                  /\    \                  /\    \          /\    \
+#          /::\____\              /::::\    \              /::\____\/::::\    \              /::\    \               /::\    \              /::::\    \              /::\    \                /::\    \               /::\    \                /::\    \                /::\    \        /::\    \
+#         /:::/    /             /::::::\    \            /:::/    /::::::\    \            /::::\    \             /::::\    \            /::::::\    \            /::::\    \              /::::\    \             /::::\    \              /::::\    \              /::::\    \       \:::\    \
+#        /:::/    /             /::::::::\    \          /:::/    /::::::::\    \          /::::::\    \           /::::::\    \          /::::::::\    \          /::::::\    \            /::::::\    \           /::::::\    \            /::::::\    \            /::::::\    \       \:::\    \
+#       /:::/    /             /:::/~~\:::\    \        /:::/    /:::/~~\:::\    \        /:::/\:::\    \         /:::/\:::\    \        /:::/~~\:::\    \        /:::/\:::\    \          /:::/\:::\    \         /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \       \:::\    \
+#      /:::/____/             /:::/    \:::\    \      /:::/    /:::/    \:::\    \      /:::/__\:::\    \       /:::/__\:::\    \      /:::/    \:::\    \      /:::/__\:::\    \        /:::/  \:::\    \       /:::/  \:::\    \        /:::/__\:::\    \        /:::/__\:::\    \       \:::\    \
+#     /::::\    \            /:::/    / \:::\    \    /:::/    /:::/    / \:::\    \    /::::\   \:::\    \     /::::\   \:::\    \    /:::/    / \:::\    \    /::::\   \:::\    \      /:::/    \:::\    \     /:::/    \:::\    \      /::::\   \:::\    \       \:::\   \:::\    \      /::::\    \
+#    /::::::\    \   _____  /:::/____/   \:::\____\  /:::/    /:::/____/   \:::\____\  /::::::\   \:::\    \   /::::::\   \:::\    \  /:::/____/   \:::\____\  /::::::\   \:::\    \    /:::/    / \:::\    \   /:::/    / \:::\    \    /::::::\   \:::\    \    ___\:::\   \:::\    \    /::::::\    \
+#   /:::/\:::\    \ /\    \|:::|    |     |:::|    |/:::/    /:::|    |     |:::|    |/:::/\:::\   \:::\ ___\ /:::/\:::\   \:::\____\|:::|    |     |:::|    |/:::/\:::\   \:::\    \  /:::/    /   \:::\ ___\ /:::/    /   \:::\    \  /:::/\:::\   \:::\    \  /\   \:::\   \:::\    \  /:::/\:::\    \
+#  /:::/  \:::\    /::\____\:::|____|     |:::|    /:::/____/|:::|____|     |:::|    /:::/__\:::\   \:::|    /:::/  \:::\   \:::|    |:::|____|     |:::|    /:::/  \:::\   \:::\____\/:::/____/     \:::|    /:::/____/     \:::\____\/:::/  \:::\   \:::\____\/::\   \:::\   \:::\____\/:::/  \:::\____\
+#  \::/    \:::\  /:::/    /\:::\    \   /:::/    /\:::\    \ \:::\    \   /:::/    /\:::\   \:::\  /:::|____\::/   |::::\  /:::|____|\:::\    \   /:::/    /\::/    \:::\  /:::/    /\:::\    \     /:::|____\:::\    \      \::/    /\::/    \:::\  /:::/    /\:::\   \:::\   \::/    /:::/    \::/    /
+#   \/____/ \:::\/:::/    /  \:::\    \ /:::/    /  \:::\    \ \:::\    \ /:::/    /  \:::\   \:::\/:::/    / \/____|:::::\/:::/    /  \:::\    \ /:::/    /  \/____/ \:::\/:::/    /  \:::\    \   /:::/    / \:::\    \      \/____/  \/____/ \:::\/:::/    /  \:::\   \:::\   \/____/:::/    / \/____/
+#            \::::::/    /    \:::\    /:::/    /    \:::\    \ \:::\    /:::/    /    \:::\   \::::::/    /        |:::::::::/    /    \:::\    /:::/    /            \::::::/    /    \:::\    \ /:::/    /   \:::\    \                       \::::::/    /    \:::\   \:::\    \  /:::/    /
+#             \::::/    /      \:::\__/:::/    /      \:::\    \ \:::\__/:::/    /      \:::\   \::::/    /         |::|\::::/    /      \:::\__/:::/    /              \::::/    /      \:::\    /:::/    /     \:::\    \                       \::::/    /      \:::\   \:::\____\/:::/    /
+#             /:::/    /        \::::::::/    /        \:::\    \ \::::::::/    /        \:::\  /:::/    /          |::| \::/____/        \::::::::/    /               /:::/    /        \:::\  /:::/    /       \:::\    \                      /:::/    /        \:::\  /:::/    /\::/    /
+#            /:::/    /          \::::::/    /          \:::\    \ \::::::/    /          \:::\/:::/    /           |::|  ~|               \::::::/    /               /:::/    /          \:::\/:::/    /         \:::\    \                    /:::/    /          \:::\/:::/    /  \/____/
+#           /:::/    /            \::::/    /            \:::\    \ \::::/    /            \::::::/    /            |::|   |                \::::/    /               /:::/    /            \::::::/    /           \:::\    \                  /:::/    /            \::::::/    /
+#          /:::/    /              \::/____/              \:::\____\ \::/____/              \::::/    /             \::|   |                 \::/____/               /:::/    /              \::::/    /             \:::\____\                /:::/    /              \::::/    /
+#          \::/    /                ~~                     \::/    /  ~~                     \::/____/               \:|   |                  ~~                     \::/    /                \::/____/               \::/    /                \::/    /                \::/    /
+#           \/____/                                         \/____/                           ~~                      \|___|                                          \/____/                  ~~                      \/____/                  \/____/                  \/____/
+#
+# In this file you can change various settings of HoloBroadcast. For a more detailed documentation
+# on how to configure HoloBroadcast please visit HoloBroadcast's Spigot page.
+
+default-hologram-duration: 200
+max-hologram-duration: 400
+lock-hud-y: false
+relative-display:
+  x: 0
+  y: 0
+  z: 0
+hologram-HUD-sounds-spawn-despawn-enabled: true
+hologram-HUD-spawn-sound: ENTITY_FIREWORK_ROCKET_LARGE_BLAST,0.5,2
+hologram-HUD-despawn-sound: BLOCK_LAVA_POP,2,2
+combattag-time: 10
+communicate-through-bungee: true
+
+hooks:
+  plotsquared:
+    hud-on-enter-plot:
+      enabled: false
+      duration: 125
+      message: '&d&lEntering...%nl%&c%ownername% &dplot!'
+    disable-on-serverplot: false
+    disable-for-owners:
+      - _Rolyn
+  factions:
+    hud-on-enter-faction:
+      enabled: true
+      duration: 125
+      message: '&7You just entered &c&l%faction_name%&r&7!%faction_description%%bl%%faction_leader%'
+      if-leader: '%bl%&7Leader: &c%name%'
+      if-description: '%nl%&4&o%description%'
+  worldguard:
+    enabled: true
+    hud-on-enter-region:
+      duration: 125
+  lands:
+    hud-on-enter-land:
+      enabled: false
+      duration: 125
+      message: '&d&lEntering...%nl%&c%landname% &d!%nl%%landcolorname%'
+  protectionstones:
+    hud-on-enter-region:
+      enabled: true
+      duration: 125
+      message: '&cEntering %ownername% land... Name: %landname%'
+    hud-on-leave-region:
+      enabled: true
+      duration: 125
+      message: '&cLeaving %ownername% land... Name: %landname%'
+
+join-message:
+  enabled: true
+  duration: 160
+  message: '%item_DIAMOND_SWORD%&elWelcome on my %animation_rainbowcolor%&lawesome &eserver%nl%&eNice to see you again!%bl%&7&oDo not forget to check our website%nl%&bcoolsite.web'
+  send-delay: 45
+
+welcome-message:
+  enabled: true
+  duration: 160
+  message: '&a%animation_welcome%%nl%on the server!%item_BEACON%'
+  send-delay: 45
+
+disabled-worlds:
+  - 'world_nether'
+
+auto-announcer:
+  enabled: true
+  duration: 260
+  repeat-each: 2400
+  messages:
+    - '&m      &r[&6&lAnnounce&r]&m      %bl%&7Use &d/hb help &7to get some help!'
+    - '&m      &r[&6&lAnnounce&r]&m      %bl%&7Drink &bwater&7! It is important.'
+
+private-messages:
+  template: '&m     &r &cPrivate Message &r&m     %nl%&4From: &a%sender%%nl%&b%message%'
+  duration: 350
+
+disable-hud-for-these-players:
+  - "Notch"

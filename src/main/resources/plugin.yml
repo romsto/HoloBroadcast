@@ -1,0 +1,12 @@
+name: HoloBroadcast
+authors: [ _Rolyn, DevKrazy ]
+description: Display Holograms in front of players!
+main: net.mystipvp.holobroadcast.HoloBroadcast
+version: 3.0
+softdepend: [ PlaceholderAPI, MVdWPlaceholderAPI, Factions, WorldGuard, ProtectionStones, Lands ]
+api-version: 1.13
+commands:
+  holobroadcast:
+    description: HoloBroadcast main command
+    aliases: [ hb, holo ]
+    usage: §cInvalid usage, please use /hb

@@ -1,0 +1,2 @@
+templatetest: '&cThis is a &bTest Template.%nl%&aThe player put &2%argument_1% in the command.%bl%&eHere is the second argument: %argument_2%'
+messagetemplate: '&m     &r &cMessage &r&m     %nl%&4From: &a%argument_1%%nl%&b%argument_other%'

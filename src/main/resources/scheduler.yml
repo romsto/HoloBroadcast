@@ -1,0 +1,18 @@
+repeat:
+  mytask1-everyday-at-two:
+    hour: "14:45:00"
+    duration: 260
+    message: "%item_CLOCK%&aThis is an automated task.%bl%&eIt is scheduled every day at 02:45PM!"
+    everyday: true
+  mytask2-every-monday-at-eight:
+    hour: "20:05:00"
+    duration: 260
+    message: "%item_CLOCK%&aThis is an automated task.%bl%&eIt is scheduled every &6MONDAY&e at 08:05PM!"
+    everyday: false
+    week-day: "Monday"
+
+onetime:
+  mytask3:
+    date: "2025-06-24 06:24:00"
+    duration: 624
+    message: "%item_PAPER%&3This task run the 24th June 2025 at 06:24"

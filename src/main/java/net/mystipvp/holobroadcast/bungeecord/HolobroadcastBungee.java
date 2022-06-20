@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2020-2022.
+ * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
+ * Some contributors may have contributed to this file.
+ *
+ * HoloBroadcast cannot be copied and/or distributed without the express premission of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy)
+ */
+
+package net.mystipvp.holobroadcast.bungeecord;
+
+import net.md_5.bungee.api.ProxyServer;
+import net.md_5.bungee.api.plugin.Plugin;
+
+public class HolobroadcastBungee extends Plugin {
+
+    public static String VERSION;
+
+    @Override
+    public void onEnable() {
+        getProxy().registerChannel("BungeeCord");
+        VERSION = getDescription().getVersion();
+
+        ProxyServer.getInstance().getPluginManager().registerCommand(this, new HolobroadcastCommand());
+
+        getLogger().info("O      O    OOAD");
+        getLogger().info("L      L    L    C");
+        getLogger().info("O      O    O    A");
+        getLogger().info("HBROADCH    HAST");
+        getLogger().info("O      O    O    S");
+        getLogger().info("L      L    L    T");
+        getLogger().info("O      O    OBRD");
+    }
+}
