@@ -28,16 +28,13 @@ public class SettingsConfig {
     public static final String PRIVATE_MESSAGES_SECTION = "private-messages.";
     private static final CustomConfig settings = HoloBroadcast.getSettingsConfig();
     private static final FileConfiguration config = settings.getConfig();
+    private static final String JOIN_MESSAGE_SECTION = "join-message.";
     /*
     Hooks section
      */
     private static final String HOOKS_SECTION = "hooks.";
     private static final String PLOT_SECTION = "plotsquared.";
-    private static final String FACTIONS_SECTION = "factions.";
     private static final String WORLDGUARD_SECTION = "worldguard.";
-    private static final String LANDS_SECTION = "lands.";
-    private static final String PROTECTIONSTONES_SECTION = "protectionstones.";
-    private static final String JOIN_MESSAGE_SECTION = "join-message.";
 
     public static int getDefaultHologramDuration() {
         return config.getInt("default-hologram-duration");
@@ -98,26 +95,6 @@ public class SettingsConfig {
         return config.getStringList(HOOKS_SECTION + PLOT_SECTION + "disable-for-owners");
     }
 
-    public static boolean getFactionEnterEnabled() {
-        return config.getBoolean(HOOKS_SECTION + FACTIONS_SECTION + "hud-on-enter-faction.enabled");
-    }
-
-    public static long getFactionEnterMessageDuration() {
-        return config.getLong(HOOKS_SECTION + FACTIONS_SECTION + "hud-on-enter-faction.duration");
-    }
-
-    public static String getFactionEnterMessageText() {
-        return config.getString(HOOKS_SECTION + FACTIONS_SECTION + "hud-on-enter-faction.message");
-    }
-
-    public static String getFactionEnterIfLeaderText() {
-        return config.getString(HOOKS_SECTION + FACTIONS_SECTION + "hud-on-enter-faction.if-leader");
-    }
-
-    public static String getFactionEnterIfDescriptionText() {
-        return config.getString(HOOKS_SECTION + FACTIONS_SECTION + "hud-on-enter-faction.if-description");
-    }
-
     public static long getWorldGuardEnterMessageDuration() {
         return config.getLong(HOOKS_SECTION + WORLDGUARD_SECTION + "hud-on-enter-region.duration");
     }
@@ -126,45 +103,9 @@ public class SettingsConfig {
         return config.getBoolean(HOOKS_SECTION + WORLDGUARD_SECTION + "enabled");
     }
 
-    public static boolean getLandEnterEnabled() {
-        return config.getBoolean(HOOKS_SECTION + LANDS_SECTION + "hud-on-enter-land.enabled");
-    }
-
-    public static long getLandEnterMessageDuration() {
-        return config.getLong(HOOKS_SECTION + LANDS_SECTION + "hud-on-enter-land.duration");
-    }
-
-    public static String getLandEnterMessageText() {
-        return config.getString(HOOKS_SECTION + LANDS_SECTION + "hud-on-enter-land.message");
-    }
-
-    public static boolean getPSEnterEnabled() {
-        return config.getBoolean(HOOKS_SECTION + PROTECTIONSTONES_SECTION + "hud-on-enter-region.enabled");
-    }
-
-    public static long getPSEnterMessageDuration() {
-        return config.getLong(HOOKS_SECTION + PROTECTIONSTONES_SECTION + "hud-on-enter-region.duration");
-    }
-
     /*
     Join message section "join-message."
      */
-
-    public static String getPSEnterMessageText() {
-        return config.getString(HOOKS_SECTION + PROTECTIONSTONES_SECTION + "hud-on-enter-region.message");
-    }
-
-    public static boolean getPSLeaveEnabled() {
-        return config.getBoolean(HOOKS_SECTION + PROTECTIONSTONES_SECTION + "hud-on-leave-region.enabled");
-    }
-
-    public static long getPSLeaveMessageDuration() {
-        return config.getLong(HOOKS_SECTION + PROTECTIONSTONES_SECTION + "hud-on-leave-region.duration");
-    }
-
-    public static String getPSLeaveMessageText() {
-        return config.getString(HOOKS_SECTION + PROTECTIONSTONES_SECTION + "hud-on-leave-region.message");
-    }
 
     public static boolean getJoinMessageEnabled() {
         return config.getBoolean(JOIN_MESSAGE_SECTION + "enabled");

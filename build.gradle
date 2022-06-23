@@ -6,8 +6,11 @@ plugins {
 group 'net.mystipvp'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 
 repositories {
     mavenCentral()
@@ -16,15 +19,25 @@ repositories {
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     // PlaceholderAPI
     maven { url 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
+    // WorldGuard
+    maven { url "https://maven.enginehub.org/repo/" }
 }
 
 dependencies {
+    // Unit tests
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    // Spigot & Bungee
     compileOnly 'org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT'
     compileOnly 'net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT'
-    compileOnly 'me.clip:placeholderapi:2.10.10'
+    // Hooks
+    compileOnly 'me.clip:placeholderapi:2.10.10' // PlaceholderAPI
+    compileOnly 'com.sk89q.worldguard:worldguard-bukkit:7.0.7' // WorldGuard
+    compileOnly 'com.plotsquared:PlotSquared-Core:6.9.0' // PlotSquared
+    implementation platform("com.intellectualsites.bom:bom-1.18.x:1.5") // PlotSquared
+    // Materials & Sounds
     implementation 'com.github.cryptomorin:XSeries:8.8.0'
+    implementation platform("com.intellectualsites.bom:bom-1.18.x:1.5")
 }
 
 test {

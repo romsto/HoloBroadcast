@@ -45,31 +45,10 @@ hooks:
     disable-on-serverplot: false
     disable-for-owners:
       - _Rolyn
-  factions:
-    hud-on-enter-faction:
-      enabled: true
-      duration: 125
-      message: '&7You just entered &c&l%faction_name%&r&7!%faction_description%%bl%%faction_leader%'
-      if-leader: '%bl%&7Leader: &c%name%'
-      if-description: '%nl%&4&o%description%'
   worldguard:
     enabled: true
     hud-on-enter-region:
       duration: 125
-  lands:
-    hud-on-enter-land:
-      enabled: false
-      duration: 125
-      message: '&d&lEntering...%nl%&c%landname% &d!%nl%%landcolorname%'
-  protectionstones:
-    hud-on-enter-region:
-      enabled: true
-      duration: 125
-      message: '&cEntering %ownername% land... Name: %landname%'
-    hud-on-leave-region:
-      enabled: true
-      duration: 125
-      message: '&cLeaving %ownername% land... Name: %landname%'
 
 join-message:
   enabled: true
