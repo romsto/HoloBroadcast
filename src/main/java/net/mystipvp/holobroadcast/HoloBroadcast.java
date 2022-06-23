@@ -15,6 +15,8 @@ import net.mystipvp.holobroadcast.config.files.SchedulerConfig;
 import net.mystipvp.holobroadcast.config.files.TemplatesConfig;
 import net.mystipvp.holobroadcast.holograms.HologramPlayersManager;
 import net.mystipvp.holobroadcast.hooks.PlaceholdersHook;
+import net.mystipvp.holobroadcast.hooks.PlotSquaredHook;
+import net.mystipvp.holobroadcast.hooks.WorldGuardHook;
 import net.mystipvp.holobroadcast.listeners.CombatListeners;
 import net.mystipvp.holobroadcast.listeners.ConnectionListeners;
 import net.mystipvp.holobroadcast.listeners.GUIListeners;
@@ -108,6 +110,8 @@ public class HoloBroadcast extends JavaPlugin implements Listener {
     @Override
     public void onLoad() {
         instance = this;
+
+        WorldGuardHook.init();
     }
 
     @Override
@@ -124,7 +128,9 @@ public class HoloBroadcast extends JavaPlugin implements Listener {
 
         // Hooks
         placeholdersHook = new PlaceholdersHook();
+        new PlotSquaredHook();
         new BungeeChanneling();
+        WorldGuardHook.load();
 
         // Register templates
         TemplatesConfig.getTemplatesList();
