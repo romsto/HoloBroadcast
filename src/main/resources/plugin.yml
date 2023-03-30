@@ -2,7 +2,7 @@ name: HoloBroadcast
 authors: [ _Rolyn, DevKrazy ]
 description: Display Holograms in front of players!
 main: net.mystipvp.holobroadcast.HoloBroadcast
-version: 3.0
+version: 3.1
 softdepend: [ PlaceholderAPI, WorldGuard, PlotSquared ]
 api-version: 1.13
 commands:

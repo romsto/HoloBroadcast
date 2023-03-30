@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -56,9 +56,10 @@ public class ReflectionCache {
      */
     public static Method setInvisible, setCustomNameVisible, setMarker,
             setCustomName, getID, getDataWatcher,
-            setLocation, setSmall, asNMSCopy, setFireTicks;
+            setLocation, setSmall, asNMSCopy, setFireTicks, getNonDefaults;
 
     public static boolean setNameUsesString = false, usesIntArray = false,
+            is_1194 = false,
             is_119 = ReflectionUtil.version.contains("1_19"), usesPair = false, usesEnumItemSlot = false,
             supportsHex = ReflectionUtil.version.contains("1_16") || ReflectionUtil.version.contains("1_17")
                     || ReflectionUtil.version.contains("1_18") || is_119,
@@ -73,7 +74,11 @@ public class ReflectionCache {
             Pair = optionalPair.get();
         try {
             EntityArmorStandConstructor = EntityArmorStand.getConstructor(World, double.class, double.class, double.class);
-            PacketPlayOutSpawnEntityLivingConstructor = PacketPlayOutSpawnEntityLiving.getConstructor(EntityLiving);
+            try {
+                PacketPlayOutSpawnEntityLivingConstructor = PacketPlayOutSpawnEntityLiving.getConstructor(EntityLiving);
+            } catch (NoSuchMethodException e) {
+                PacketPlayOutSpawnEntityLivingConstructor = PacketPlayOutSpawnEntityLiving.getConstructor(Entity);
+            }
             if (is_117) {
                 try {
                     PacketPlayOutEntityDestroyConstructor = PacketPlayOutEntityDestroy.getConstructor(int.class);
@@ -83,7 +88,12 @@ public class ReflectionCache {
                 }
             } else
                 PacketPlayOutEntityDestroyConstructor = PacketPlayOutEntityDestroy.getConstructor(int[].class);
-            PacketPlayOutEntityMetadataConstructor = PacketPlayOutEntityMetadata.getConstructor(int.class, DataWatcher, boolean.class);
+            try {
+                PacketPlayOutEntityMetadataConstructor = PacketPlayOutEntityMetadata.getConstructor(int.class, DataWatcher, boolean.class);
+            } catch (NoSuchMethodException e) {
+                is_1194 = true;
+                PacketPlayOutEntityMetadataConstructor = PacketPlayOutEntityMetadata.getConstructor(int.class, List.class);
+            }
             PacketPlayOutEntityTeleportConstructor = PacketPlayOutEntityTeleport.getConstructor(Entity);
             try {
                 setInvisible = EntityArmorStand.getMethod("setInvisible", boolean.class);
@@ -118,12 +128,18 @@ public class ReflectionCache {
             try {
                 getID = EntityArmorStand.getMethod("getId");
             } catch (NoSuchMethodException e) {
-                getID = EntityArmorStand.getMethod("ae");
+                if (is_1194)
+                    getID = EntityArmorStand.getMethod("af");
+                else
+                    getID = EntityArmorStand.getMethod("ae");
             }
             try {
                 getDataWatcher = Entity.getMethod("getDataWatcher");
             } catch (NoSuchMethodException e) {
-                getDataWatcher = Entity.getMethod("ai");
+                if (is_1194)
+                    getDataWatcher = Entity.getMethod("aj");
+                else
+                    getDataWatcher = Entity.getMethod("ai");
             }
             asNMSCopy = CraftItemStack.getMethod("asNMSCopy", org.bukkit.inventory.ItemStack.class);
             try {
@@ -156,6 +172,8 @@ public class ReflectionCache {
             }
             if (usesPair)
                 PairConstructor = Pair.getConstructor(Object.class, Object.class);
+            if (is_1194)
+                getNonDefaults = DataWatcher.getMethod("c");
         } catch (NoSuchMethodException e) {
             HoloBroadcast.getInstance().getLogger().severe("Error while getting method/constructor:" + e.getMessage());
             e.printStackTrace();

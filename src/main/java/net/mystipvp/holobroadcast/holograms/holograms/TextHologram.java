@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -101,7 +101,11 @@ public class TextHologram extends Hologram {
      * @throws InstantiationException    Error
      */
     private void updateMetadata() throws IllegalAccessException, InvocationTargetException, InstantiationException {
-        Object packet = ReflectionCache.PacketPlayOutEntityMetadataConstructor.newInstance(id, ReflectionCache.getDataWatcher.invoke(armorStand), true);
+        Object packet;
+        if (!ReflectionCache.is_1194)
+            packet = ReflectionCache.PacketPlayOutEntityMetadataConstructor.newInstance(id, ReflectionCache.getDataWatcher.invoke(armorStand), true);
+        else
+            packet = ReflectionCache.PacketPlayOutEntityMetadataConstructor.newInstance(id, ReflectionCache.getNonDefaults.invoke(ReflectionCache.getDataWatcher.invoke(armorStand)));
         ReflectionUtil.sendPacket(viewer, packet);
     }
 
