@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -18,6 +18,7 @@ import net.mystipvp.holobroadcast.holograms.HologramPlayersManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 
@@ -58,7 +59,7 @@ public class BungeeChanneling implements PluginMessageListener {
     }
 
     @Override
-    public void onPluginMessageReceived(String channel, Player player, byte[] message) {
+    public void onPluginMessageReceived(String channel, @NotNull Player player, byte[] message) {
         if (!channel.equals("BungeeCord")) {
             return;
         }

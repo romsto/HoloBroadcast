@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -33,7 +33,7 @@ public class IChatBaseComponent {
     }
 
     public static Object of(String string) throws InvocationTargetException, IllegalAccessException {
-        if (string == null || string.length() <= 0)
+        if (string == null || string.length() == 0)
             return newIChatBaseComponent.invoke(null, "[\"\",{\"text\": \"\"}]");
 
         string = string.replaceAll("\"", "'");
@@ -61,14 +61,10 @@ public class IChatBaseComponent {
 
         StringBuilder text = new StringBuilder("[\"\"");
         for (Tuple<String, String> message : messages)
-            text.append(",{\"text\": \"").append(message.getFirst()).append("\", \"color\": \"").append(message.getSecond()).append("\"}");
+            text.append(",{\"text\": \"").append(message.first()).append("\", \"color\": \"").append(message.second()).append("\"}");
         text.append("]");
 
         return newIChatBaseComponent.invoke(null, text.toString());
-    }
-
-    public static Object direct(String string) throws InvocationTargetException, IllegalAccessException {
-        return newIChatBaseComponent.invoke(null, string);
     }
 
 }

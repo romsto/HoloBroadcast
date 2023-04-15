@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -28,7 +28,7 @@ public class ConnectionListeners implements Listener {
         HologramPlayersManager manager = HologramPlayersManager.getInstance();
         HologramPlayer hologramPlayer = manager.createHologramPlayer(uuid);
 
-        if (event.getPlayer().hasPlayedBefore() == false) {
+        if (!event.getPlayer().hasPlayedBefore()) {
             if (SettingsConfig.getWelcomeMessageEnabled())
                 hologramPlayer.showDelayedHUD(SettingsConfig.getWelcomeMessageText(), SettingsConfig.getWelcomeMessageDuration(), SettingsConfig.getWelcomeSendDelay());
         } else {

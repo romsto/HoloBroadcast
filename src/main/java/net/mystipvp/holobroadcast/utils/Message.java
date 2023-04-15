@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -38,13 +38,6 @@ public enum Message {
     /**
      * @return the current Message's String message.
      */
-    private String getMessage() {
-        return this.message;
-    }
-
-    /**
-     * @return the current Message's String message.
-     */
     public String getMessageWithPrefix() {
         return PREFIX + this.message;
     }
@@ -64,14 +57,13 @@ public enum Message {
     /**
      * Sends the current message with a prefix to a CommandSender.
      * If the sender is a Player the message is formatted using one of the two Placeholder APIs.
-     * Otherwise it simply translates the color codes.
+     * Otherwise, it simply translates the color codes.
      *
      * @param sender the one who executed a command
      */
     public void send(CommandSender sender) {
         String colored = MessageUtil.color(this.getMessageWithPrefix());
-        if (sender instanceof Player) {
-            Player player = (Player) sender;
+        if (sender instanceof Player player) {
             String formatted = MessageUtil.format(player, colored);
             player.sendMessage(formatted);
         } else {

@@ -20,6 +20,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class ItemHologram extends Hologram {
@@ -37,7 +38,7 @@ public class ItemHologram extends Hologram {
         isBlock = item.getType().isBlock();
 
         try {
-            this.armorStand = ReflectionCache.EntityArmorStandConstructor.newInstance(ReflectionUtil.getHandle(ReflectionCache.CraftWorld.cast(this.location.getWorld())), this.location.getX(), this.location.getY(), this.location.getZ());
+            this.armorStand = ReflectionCache.EntityArmorStandConstructor.newInstance(ReflectionUtil.getHandle(Objects.requireNonNull(ReflectionCache.CraftWorld.cast(this.location.getWorld()))), this.location.getX(), this.location.getY(), this.location.getZ());
             ReflectionCache.setInvisible.invoke(armorStand, true);
             ReflectionCache.setSmall.invoke(armorStand, true);
             boolean marker = ReflectionCache.setMarker != null;

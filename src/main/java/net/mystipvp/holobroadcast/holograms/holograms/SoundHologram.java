@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -47,9 +47,8 @@ public class SoundHologram extends Hologram {
 
         if (count >= refreshRate) {
             count = 0;
-            if (hologramPlayer.receiveHologramsSounds()) {
+            if (hologramPlayer.receiveHologramsSounds())
                 XSound.play(viewer, sound);
-            }
         } else
             count++;
     }

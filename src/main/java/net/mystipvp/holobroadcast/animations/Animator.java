@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -22,27 +22,6 @@ public class Animator {
         this.frames = frames;
         this.refreshRate = refreshRate;
         this.refreshCounter = refreshRate;
-    }
-
-    /**
-     * @return all the string frames of the animation
-     */
-    public List<String> getFrames() {
-        return frames;
-    }
-
-    /**
-     * @return the refreshable of the animation
-     */
-    public int getRefreshRate() {
-        return refreshRate;
-    }
-
-    /**
-     * @return the current position of the animation
-     */
-    public int getCursor() {
-        return cursor;
     }
 
     /**

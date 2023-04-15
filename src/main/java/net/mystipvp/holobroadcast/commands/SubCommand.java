@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -27,8 +27,8 @@ public abstract class SubCommand {
     /**
      * Constructor for simple SubCommands (without arguments)
      *
-     * @param name
-     * @param description
+     * @param name        name
+     * @param description desc
      */
     public SubCommand(String name, String description) {
         this.name = name;
@@ -38,10 +38,10 @@ public abstract class SubCommand {
     /**
      * Constructor for SubCommands which require some arguments
      *
-     * @param name
-     * @param description
-     * @param possibleArgs
-     * @param minimumArgs
+     * @param name name
+     * @param description desc
+     * @param possibleArgs args
+     * @param minimumArgs required
      */
     public SubCommand(String name, String description, String possibleArgs, int minimumArgs) {
         this(name, description);

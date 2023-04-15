@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class CustomConfig {
@@ -36,22 +37,23 @@ public class CustomConfig {
         this.saveDefaultConfig();
         this.config = YamlConfiguration.loadConfiguration(this.configFile);
         this.reload();
-        if (updateMissingFields == true) {
+        if (updateMissingFields) {
 
             Configuration currentConfig = this.getConfig();
-            currentConfig.setDefaults(YamlConfiguration.loadConfiguration(new InputStreamReader(this.plugin.getResource(this.name))));
+            currentConfig.setDefaults(YamlConfiguration.loadConfiguration(new InputStreamReader(Objects.requireNonNull(this.plugin.getResource(this.name)))));
             Configuration defaultConfig = currentConfig.getDefaults();
 
             // Adds the missing fields
+            assert defaultConfig != null;
             defaultConfig.getKeys(true).forEach(key -> {
-                if (currentConfig.isSet(key) == false) {
+                if (!currentConfig.isSet(key)) {
                     currentConfig.set(key, defaultConfig.get(key));
                 }
             });
 
             // Removes the old fields
             currentConfig.getKeys(true).forEach(key -> {
-                if (defaultConfig.isSet(key) == false) {
+                if (!defaultConfig.isSet(key)) {
                     currentConfig.set(key, null);
                 }
             });

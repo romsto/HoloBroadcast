@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -43,7 +43,7 @@ public abstract class HologramHolder {
     protected Location location;
 
     /**
-     * Instanciates a new HologramHolder. If the creator is set to null, permissions won't have
+     * Instantiates a new HologramHolder. If the creator is set to null, permissions won't have
      * any effect.
      *
      * @param name     the identifier of the current HologramHolder
@@ -200,21 +200,21 @@ public abstract class HologramHolder {
      */
 
     /**
-     * Creates all of the holograms
+     * Creates all the holograms
      */
     public void create() {
         holograms.forEach(Hologram::create);
     }
 
     /**
-     * Removes all of the holograms
+     * Removes all the holograms
      */
     public void remove() {
         holograms.forEach(Hologram::destroy);
     }
 
     /**
-     * Updates all of the current HologramHolder's holograms.
+     * Updates all the current HologramHolder's holograms.
      */
     public void update() {
         this.onUpdate();

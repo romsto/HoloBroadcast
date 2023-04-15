@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -22,8 +22,7 @@ public class AutoAnnouncer {
     static List<String> messages;
 
     private static int cursor;
-    private static long duration;
-    private static long period;
+    private static long duration, period;
 
     public static void update() {
         messages = SettingsConfig.getAutoAnnouncerMessages();

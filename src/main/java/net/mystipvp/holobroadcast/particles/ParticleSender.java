@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -19,10 +19,6 @@ import org.bukkit.material.MaterialData;
 interface ParticleSender {
 
     void spawnParticle(Object receiver, ParticleType particle, double x, double y, double z, int count, double offsetX, double offsetY, double offsetZ, double extra, Object data);
-
-    Object getParticle(ParticleType particle);
-
-    boolean isValidData(Object particle, Object data);
 
     default double color(double color) {
         return color / 255.0;
@@ -51,20 +47,6 @@ interface ParticleSender {
             } else if (receiver instanceof Player) {
                 ((Player) receiver).spawnParticle(bukkitParticle, x, y, z, count, offsetX, offsetY, offsetZ, extra, data);
             }
-        }
-
-        @Override
-        public Particle getParticle(ParticleType particle) {
-            try {
-                return Particle.valueOf(particle.toString());
-            } catch (IllegalArgumentException e) {
-                return null;
-            }
-        }
-
-        @Override
-        public boolean isValidData(Object particle, Object data) {
-            return isValidDataBukkit((Particle) particle, data);
         }
 
         public boolean isValidDataBukkit(Particle particle, Object data) {

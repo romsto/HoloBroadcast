@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -87,15 +87,15 @@ public class SchedulerConfig {
         HologramPlayersManager manager = HologramPlayersManager.getInstance();
         cachedOnetime.forEach((date, stringLongTuple) -> {
             if (date.equalsIgnoreCase(currentDate))
-                Bukkit.getOnlinePlayers().forEach(o -> manager.getHologramPlayerFromUUID(o.getUniqueId()).showHUD(Bukkit.getConsoleSender(), stringLongTuple.getFirst(), stringLongTuple.getSecond()));
+                Bukkit.getOnlinePlayers().forEach(o -> manager.getHologramPlayerFromUUID(o.getUniqueId()).showHUD(Bukkit.getConsoleSender(), stringLongTuple.first(), stringLongTuple.second()));
         });
         cachedEveryDays.forEach((date, stringLongTuple) -> {
             if (date.equalsIgnoreCase(currentHour))
-                Bukkit.getOnlinePlayers().forEach(o -> manager.getHologramPlayerFromUUID(o.getUniqueId()).showHUD(Bukkit.getConsoleSender(), stringLongTuple.getFirst(), stringLongTuple.getSecond()));
+                Bukkit.getOnlinePlayers().forEach(o -> manager.getHologramPlayerFromUUID(o.getUniqueId()).showHUD(Bukkit.getConsoleSender(), stringLongTuple.first(), stringLongTuple.second()));
         });
         cachedSpecifiedDay.forEach((dateTuple, stringLongTuple) -> {
-            if (dateTuple.getSecond().equalsIgnoreCase(currentDay) && dateTuple.getFirst().equalsIgnoreCase(currentHour))
-                Bukkit.getOnlinePlayers().forEach(o -> manager.getHologramPlayerFromUUID(o.getUniqueId()).showHUD(Bukkit.getConsoleSender(), stringLongTuple.getFirst(), stringLongTuple.getSecond()));
+            if (dateTuple.second().equalsIgnoreCase(currentDay) && dateTuple.first().equalsIgnoreCase(currentHour))
+                Bukkit.getOnlinePlayers().forEach(o -> manager.getHologramPlayerFromUUID(o.getUniqueId()).showHUD(Bukkit.getConsoleSender(), stringLongTuple.first(), stringLongTuple.second()));
         });
     }
 

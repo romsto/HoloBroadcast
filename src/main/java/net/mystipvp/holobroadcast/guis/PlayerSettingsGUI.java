@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -30,6 +30,7 @@ public class PlayerSettingsGUI {
             if (!hologramPlayer.receiveHUDMessages()) {
                 ItemStack item = MessagesConfig.getItem("hud.disabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getHudDisabledTitle());
                 meta.setLore(MessagesConfig.getHudDisabledLore());
                 item.setItemMeta(meta);
@@ -43,6 +44,7 @@ public class PlayerSettingsGUI {
             } else {
                 ItemStack item = MessagesConfig.getItem("hud.enabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getHudEnabledTitle());
                 meta.setLore(MessagesConfig.getHudEnabledLore());
                 item.setItemMeta(meta);
@@ -63,6 +65,7 @@ public class PlayerSettingsGUI {
             int next = playerHUDDistance >= max ? min : playerHUDDistance + 1;
             ItemStack item = MessagesConfig.getItem("hud-distance.items.distance-" + playerHUDDistance);
             ItemMeta meta = item.getItemMeta();
+            assert meta != null;
             meta.setDisplayName(MessagesConfig.getHudDistanceTitle());
             meta.setLore(MessagesConfig.getHudDistanceLore(playerHUDDistance, next));
             item.setItemMeta(meta);
@@ -79,6 +82,7 @@ public class PlayerSettingsGUI {
             if (!hologramPlayer.getReceiveAutoAnnounces()) {
                 ItemStack item = MessagesConfig.getItem("announcer.disabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getAnnouncerDisabledTitle());
                 meta.setLore(MessagesConfig.getAnnouncerDisabledLore());
                 item.setItemMeta(meta);
@@ -92,6 +96,7 @@ public class PlayerSettingsGUI {
             } else {
                 ItemStack item = MessagesConfig.getItem("announcer.enabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getAnnouncerEnabledTitle());
                 meta.setLore(MessagesConfig.getAnnouncerEnabledLore());
                 item.setItemMeta(meta);
@@ -109,6 +114,7 @@ public class PlayerSettingsGUI {
             if (!PlayersDataConfig.getReceiveHologramsSounds(player.getUniqueId())) {
                 ItemStack item = MessagesConfig.getItem("sounds.disabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getSoundsDisabledTitle());
                 meta.setLore(MessagesConfig.getSoundsDisabledLore());
                 item.setItemMeta(meta);
@@ -122,6 +128,7 @@ public class PlayerSettingsGUI {
             } else {
                 ItemStack item = MessagesConfig.getItem("sounds.enabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getSoundsEnabledTitle());
                 meta.setLore(MessagesConfig.getSoundsEnabledLore());
                 item.setItemMeta(meta);
@@ -139,6 +146,7 @@ public class PlayerSettingsGUI {
             if (!PlayersDataConfig.getReceiveHUDInCombat(player.getUniqueId())) {
                 ItemStack item = MessagesConfig.getItem("combat.disabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getCombatDisabledTitle());
                 meta.setLore(MessagesConfig.getCombatDisabledLore());
                 item.setItemMeta(meta);
@@ -152,6 +160,7 @@ public class PlayerSettingsGUI {
             } else {
                 ItemStack item = MessagesConfig.getItem("combat.enabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getCombatEnabledTitle());
                 meta.setLore(MessagesConfig.getCombatEnabledLore());
                 item.setItemMeta(meta);
@@ -169,6 +178,7 @@ public class PlayerSettingsGUI {
             if (!PlayersDataConfig.getReceiveParticles(player.getUniqueId())) {
                 ItemStack item = MessagesConfig.getItem("particles.disabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getParticlesDisabledTitle());
                 meta.setLore(MessagesConfig.getParticlesDisabledLore());
                 item.setItemMeta(meta);
@@ -182,6 +192,7 @@ public class PlayerSettingsGUI {
             } else {
                 ItemStack item = MessagesConfig.getItem("particles.enabled.item");
                 ItemMeta meta = item.getItemMeta();
+                assert meta != null;
                 meta.setDisplayName(MessagesConfig.getParticlesEnabledTitle());
                 meta.setLore(MessagesConfig.getParticlesEnabledLore());
                 item.setItemMeta(meta);
@@ -207,11 +218,13 @@ public class PlayerSettingsGUI {
     public static void setStaticItems(GUIMenu menu) {
         ItemStack item = MessagesConfig.getItem("decoration.item1");
         ItemMeta lbmeta = item.getItemMeta();
+        assert lbmeta != null;
         lbmeta.setDisplayName(" ");
         item.setItemMeta(lbmeta);
 
         ItemStack item1 = MessagesConfig.getItem("decoration.item2");
         ItemMeta bmeta = item1.getItemMeta();
+        assert bmeta != null;
         bmeta.setDisplayName(" ");
         item1.setItemMeta(bmeta);
 
@@ -237,6 +250,7 @@ public class PlayerSettingsGUI {
         open(player);
         if (MessagesConfig.isSoundClickEnabled()) {
             Sound clickSound = XSound.valueOf(MessagesConfig.getSoundClick()).parseSound();
+            assert clickSound != null;
             player.playSound(player.getLocation(), clickSound, 1.0F, 1.0F);
         }
     }

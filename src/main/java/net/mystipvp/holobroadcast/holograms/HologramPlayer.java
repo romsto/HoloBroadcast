@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -43,7 +43,7 @@ public class HologramPlayer {
     /**
      * Instanciates a new HologramPlayer from a Bukkit Player's UUID.
      *
-     * @param uuid
+     * @param uuid UUID
      */
     public HologramPlayer(UUID uuid) {
         this.uuid = uuid;
@@ -110,13 +110,11 @@ public class HologramPlayer {
         if (lifeTime == -1)
             lifeTime = SettingsConfig.getDefaultHologramDuration();
 
-        assert player != null; // We can't use HologramPlayer if the player is offline
-
         this.hologramHUD = new HologramHUD(creator, player.getLocation(), player, rawData, lifeTime);
         if (this.receiveHUDMessage && !SettingsConfig.getDisabledWorlds().contains(player.getWorld().getName()) && (!this.isInCombat() || this.getReceiveHUDInCombat())) {
-            BukkitTask task = Bukkit.getScheduler().runTaskAsynchronously(HoloBroadcast.getInstance(), () -> this.hologramHUD.create());
+            Bukkit.getScheduler().runTaskAsynchronously(HoloBroadcast.getInstance(), () -> this.hologramHUD.create());
             // We send a text message if the player doesn't receive holograms or if he is in a world where Holograms are disabled
-            // Or if he is combat tagged and he has disabled HUD during combat
+            // Or if he is combat tagged, and he has disabled HUD during combat
         } else {
             player.sendMessage(MessageUtil.format(player, MessagesConfig.getChatBroadcastSeparator()));
             for (String line : this.hologramHUD.rawLines) {
@@ -210,7 +208,7 @@ public class HologramPlayer {
     /**
      * Sets the HologramPlayer's receiveHUDMessage parameter and updates its field in the players_data.yml config.
      *
-     * @param receiveHUDMessage
+     * @param receiveHUDMessage Message
      */
     public void setReceiveHUDMessage(boolean receiveHUDMessage) {
         this.receiveHUDMessage = receiveHUDMessage;
@@ -227,7 +225,7 @@ public class HologramPlayer {
     /**
      * Sets the HologramPlayer's hudDistance parameter and updates its field in the players_data.yml config.
      *
-     * @param hudDistance
+     * @param hudDistance HUD dist
      */
     public void setHUDDistance(int hudDistance) {
         this.hudDistance = hudDistance;
@@ -244,7 +242,7 @@ public class HologramPlayer {
     /**
      * Sets the HologramPlayer's receiveHologramsSounds parameter and updates its field in the players_data.yml config.
      *
-     * @param receiveHologramsSounds
+     * @param receiveHologramsSounds Sound
      */
     public void setReceiveHologramsSounds(boolean receiveHologramsSounds) {
         this.receiveHologramsSounds = receiveHologramsSounds;
@@ -261,7 +259,7 @@ public class HologramPlayer {
     /**
      * Sets the HologramPlayer's receiveHUDinCombat parameter ad updates its field i the players_data.yml config.
      *
-     * @param receiveHUDInCombat
+     * @param receiveHUDInCombat Combat
      */
     public void setReceiveHUDInCombat(boolean receiveHUDInCombat) {
         this.receiveHUDInCombat = receiveHUDInCombat;
@@ -278,7 +276,7 @@ public class HologramPlayer {
     /**
      * Sets the HologramPlayer's receiveAutoAnnounces parameter ad updates its field i the players_data.yml config.
      *
-     * @param receiveAutoAnnounces
+     * @param receiveAutoAnnounces Announces
      */
     public void setReceiveAutoAnnounces(boolean receiveAutoAnnounces) {
         this.receiveAutoAnnounces = receiveAutoAnnounces;
@@ -295,7 +293,7 @@ public class HologramPlayer {
     /**
      * Sets the HologramPlayer's receiveParticles parameter ad updates its field i the players_data.yml config.
      *
-     * @param receiveParticles
+     * @param receiveParticles Particle
      */
     public void setReceiveParticles(boolean receiveParticles) {
         this.receiveParticles = receiveParticles;
@@ -303,7 +301,7 @@ public class HologramPlayer {
     }
 
     /**
-     * Clears all of the current HologramPlayer's holograms. This method clears
+     * Clears all the current HologramPlayer's holograms. This method clears
      * the HologramHUD if the HologramPlayer has one and all of his other HologramHolders.
      */
     public void clearHolograms() {
@@ -312,7 +310,7 @@ public class HologramPlayer {
     }
 
     /**
-     * Destroys all of the HologramPlayer's Holograms, cancels the BukkitTask
+     * Destroys all the HologramPlayer's Holograms, cancels the BukkitTask
      * which was updating its Holograms and saves the players_data.yml config file.
      */
     public void destroy() {

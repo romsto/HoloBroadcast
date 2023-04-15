@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -25,8 +25,11 @@ import net.mystipvp.holobroadcast.nms.ReflectionCache;
 import net.mystipvp.holobroadcast.utils.AutoAnnouncer;
 import net.mystipvp.holobroadcast.utils.Metrics;
 import org.bukkit.Bukkit;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.logging.Logger;
 
 public class HoloBroadcast extends JavaPlugin implements Listener {
 
@@ -36,13 +39,7 @@ public class HoloBroadcast extends JavaPlugin implements Listener {
     public static String VERSION;
     private static HoloBroadcast instance;
     private static PlaceholdersHook placeholdersHook;
-    private static CustomConfig settingsConfig;
-    private static CustomConfig dataConfig;
-    private static CustomConfig animationsConfig;
-    private static CustomConfig messagesConfig;
-    private static CustomConfig templatesConfig;
-    private static CustomConfig permissiontemplatesConfig;
-    private static CustomConfig schedulerConfig;
+    private static CustomConfig settingsConfig, dataConfig, animationsConfig, messagesConfig, templatesConfig, permissiontemplatesConfig, schedulerConfig;
 
     /**
      * @return the HoloBroadcast JavaPlugin instance
@@ -126,6 +123,8 @@ public class HoloBroadcast extends JavaPlugin implements Listener {
         permissiontemplatesConfig = new CustomConfig(this, "permission_templates.yml", false);
         schedulerConfig = new CustomConfig(this, "scheduler.yml", false);
 
+        Logger logger = Bukkit.getLogger();
+
         // Hooks
         placeholdersHook = new PlaceholdersHook();
         new PlotSquaredHook();
@@ -141,8 +140,16 @@ public class HoloBroadcast extends JavaPlugin implements Listener {
         HologramPlayersManager hologramPlayersManager = HologramPlayersManager.getInstance();
 
         // Command registration
-        getCommand("holobroadcast").setExecutor(HoloBroadcastCommand.getInstance());
-        getCommand("holobroadcast").setTabCompleter(HoloBroadcastCommand.getInstance());
+        PluginCommand pluginCommand = getCommand("holobroadcast");
+
+        if (pluginCommand == null) {
+            logger.warning("Couldn't load holobroadcast command. Stopping the plugin.");
+            onDisable();
+            return;
+        }
+
+        pluginCommand.setExecutor(HoloBroadcastCommand.getInstance());
+        pluginCommand.setTabCompleter(HoloBroadcastCommand.getInstance());
 
         // Events registration
         Bukkit.getPluginManager().registerEvents(new ConnectionListeners(), this);
@@ -158,22 +165,22 @@ public class HoloBroadcast extends JavaPlugin implements Listener {
 
         VERSION = getDescription().getVersion();
 
-        getLogger().info("Loading reflection...");
-        boolean b = ReflectionCache.setMarker == null;
+        logger.info("Loading reflection...");
+        boolean ignored = ReflectionCache.setMarker == null;
 
         AutoAnnouncer.update();
         SchedulerConfig.initTask();
 
-        Bukkit.getLogger().info("O      O    OOAD");
-        Bukkit.getLogger().info("L      L    L    C");
-        Bukkit.getLogger().info("O      O    O    A");
-        Bukkit.getLogger().info("HBROADCH    HAST");
-        Bukkit.getLogger().info("O      O    O    S");
-        Bukkit.getLogger().info("L      L    L    T");
-        Bukkit.getLogger().info("O      O    OBRD");
+        logger.info("O      O    OOAD");
+        logger.info("L      L    L    C");
+        logger.info("O      O    O    A");
+        logger.info("HBROADCH    HAST");
+        logger.info("O      O    O    S");
+        logger.info("L      L    L    T");
+        logger.info("O      O    OBRD");
 
-        Bukkit.getLogger().info(" ");
-        Bukkit.getLogger().info("Version licenced to: " + user + " - " + uid);
+        logger.info(" ");
+        logger.info("Version licenced to: " + user + " - " + uid);
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022.
+ * Copyright (c) 2020-2023.
  * This project (HoloBroadcast) and this file is part of Romain Storaï (_Rolyn) and Nathan Djian-Martin (DevKrazy). It is under GPLv3 License.
  * Some contributors may have contributed to this file.
  *
@@ -33,7 +33,7 @@ import java.util.zip.GZIPOutputStream;
 /**
  * bStats collects some data for plugin authors.
  * <p>
- * Check out https://bStats.org/ to learn more about bStats!
+ * Check out <a href="https://bStats.org/">...</a> to learn more about bStats!
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class Metrics {
@@ -109,12 +109,7 @@ public class Metrics {
             config.addDefault("logResponseStatusText", false);
 
             // Inform the server owners about bStats
-            config.options().header(
-                    "bStats collects some data for plugin authors like how many servers are using their plugins.\n" +
-                            "To honor their work, you should not disable it.\n" +
-                            "This has nearly no effect on the server performance!\n" +
-                            "Check out https://bStats.org/ to learn more :)"
-            ).copyDefaults(true);
+            config.options().copyDefaults(true);
             try {
                 config.save(configFile);
             } catch (IOException ignored) {
@@ -359,7 +354,7 @@ public class Metrics {
                                     Method jsonStringGetter = jsonObjectJsonSimple.getDeclaredMethod("toJSONString");
                                     jsonStringGetter.setAccessible(true);
                                     String jsonString = (String) jsonStringGetter.invoke(plugin);
-                                    JsonObject object = new JsonParser().parse(jsonString).getAsJsonObject();
+                                    JsonObject object = JsonParser.parseString(jsonString).getAsJsonObject();
                                     pluginData.add(object);
                                 }
                             } catch (ClassNotFoundException e) {
