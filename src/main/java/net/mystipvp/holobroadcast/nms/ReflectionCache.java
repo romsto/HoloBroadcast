@@ -128,17 +128,21 @@ public class ReflectionCache {
             try {
                 getID = EntityArmorStand.getMethod("getId");
             } catch (NoSuchMethodException e) {
-                if (is_1194)
+                if (is_1194) {
                     getID = EntityArmorStand.getMethod("af");
-                else
+                    if (!getID.getReturnType().equals(Integer.TYPE))
+                        getID = EntityArmorStand.getMethod("ah");
+                } else
                     getID = EntityArmorStand.getMethod("ae");
             }
             try {
                 getDataWatcher = Entity.getMethod("getDataWatcher");
             } catch (NoSuchMethodException e) {
-                if (is_1194)
+                if (is_1194) {
                     getDataWatcher = Entity.getMethod("aj");
-                else
+                    if (getDataWatcher.getReturnType().equals(Void.TYPE))
+                        getDataWatcher = Entity.getMethod("al");
+                } else
                     getDataWatcher = Entity.getMethod("ai");
             }
             asNMSCopy = CraftItemStack.getMethod("asNMSCopy", org.bukkit.inventory.ItemStack.class);
